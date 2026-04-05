@@ -612,6 +612,24 @@ body {
   color: var(--text-light);
 }
 
+.form-notice {
+  font-size: 13px;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.contact-rep {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 8px;
+}
+
 /* Contact Form */
 .contact-form {
   max-width: 700px;
