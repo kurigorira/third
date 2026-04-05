@@ -548,7 +548,34 @@ body {
   box-shadow: var(--shadow);
 }
 
-.contact-icon { font-size: 36px; margin-bottom: 12px; }
+.contact-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .2s, transform .2s;
+}
+
+.contact-card-link:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+
+.contact-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon-instagram svg {
+  color: #c13584;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-radius: 10px;
+  padding: 4px;
+  fill: white;
+}
 
 .contact-card h3 {
   font-size: 16px;
@@ -565,6 +592,23 @@ body {
 
 .contact-hours {
   font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Form title */
+.form-title-area {
+  text-align: center;
+  margin: 40px 0 24px;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 14px;
   color: var(--text-light);
 }
 
