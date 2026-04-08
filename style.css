@@ -733,6 +733,12 @@ body {
   font-size: 13px;
 }
 
+.footer-seo {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #64748b;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .nav { display: none; }
