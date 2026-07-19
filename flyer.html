@@ -348,11 +348,46 @@
       line-height: 1.6;
     }
 
+    /* QRコード */
+    .qr-area {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .qr-item {
+      text-align: center;
+    }
+
+    .qr-box {
+      width: 72px;
+      height: 72px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 4px;
+      box-shadow: 0 0 12px rgba(0,200,255,.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .qr-box canvas, .qr-box img { width: 64px !important; height: 64px !important; }
+
+    .qr-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 8px;
+      color: #00c8ff;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+
     @media print {
       body { background: #0d1117; padding: 0; }
       .flyer { width: 210mm; height: 297mm; box-shadow: none; }
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 </head>
 <body>
   <div class="flyer">
@@ -465,6 +500,19 @@
             </div>
           </div>
         </div>
+
+        <!-- QRコード -->
+        <div class="qr-area">
+          <div class="qr-item">
+            <div class="qr-box"><canvas id="qr-site"></canvas></div>
+            <div class="qr-label">🌐 WEB SITE</div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-box"><canvas id="qr-line"></canvas></div>
+            <div class="qr-label">💬 LINE</div>
+          </div>
+        </div>
+
         <div class="footer-note">
           受付時間 09:00〜20:00<br>
           長崎市・時津町・長与町 出張対応<br>
@@ -474,5 +522,15 @@
     </div>
 
   </div>
+
+  <script>
+    QRCode.toCanvas(document.getElementById('qr-site'),
+      'https://kurigorira.github.io/third/',
+      { width: 64, margin: 1, color: { dark: '#000000', light: '#ffffff' } });
+
+    QRCode.toCanvas(document.getElementById('qr-line'),
+      'https://line.me/ti/p/~8726431',
+      { width: 64, margin: 1, color: { dark: '#000000', light: '#ffffff' } });
+  </script>
 </body>
 </html>
