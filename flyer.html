@@ -387,7 +387,6 @@
       .flyer { width: 210mm; height: 297mm; box-shadow: none; }
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 </head>
 <body>
   <div class="flyer">
@@ -504,11 +503,15 @@
         <!-- QRコード -->
         <div class="qr-area">
           <div class="qr-item">
-            <div class="qr-box"><canvas id="qr-site"></canvas></div>
+            <div class="qr-box">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=64x64&data=https://kurigorira.github.io/third/" alt="サイトQR">
+            </div>
             <div class="qr-label">🌐 WEB SITE</div>
           </div>
           <div class="qr-item">
-            <div class="qr-box"><canvas id="qr-line"></canvas></div>
+            <div class="qr-box">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=64x64&data=https://line.me/ti/p/~8726431" alt="LINE QR">
+            </div>
             <div class="qr-label">💬 LINE</div>
           </div>
         </div>
@@ -523,14 +526,5 @@
 
   </div>
 
-  <script>
-    QRCode.toCanvas(document.getElementById('qr-site'),
-      'https://kurigorira.github.io/third/',
-      { width: 64, margin: 1, color: { dark: '#000000', light: '#ffffff' } });
-
-    QRCode.toCanvas(document.getElementById('qr-line'),
-      'https://line.me/ti/p/~8726431',
-      { width: 64, margin: 1, color: { dark: '#000000', light: '#ffffff' } });
-  </script>
 </body>
 </html>
