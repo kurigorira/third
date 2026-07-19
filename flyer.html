@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC GOWw チラシ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px 16px;
+    }
+
+    .flyer {
+      width: 210mm;
+      min-height: 297mm;
+      background: #fff;
+      box-shadow: 0 8px 32px rgba(0,0,0,.15);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ヘッダー */
+    .flyer-header {
+      background: linear-gradient(135deg, #1a3a6e 0%, #1a6cf7 100%);
+      color: #fff;
+      padding: 32px 36px 28px;
+      position: relative;
+    }
+
+    .flyer-header::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 0; right: 0;
+      height: 40px;
+      background: #fff;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .brand-icon { font-size: 40px; }
+
+    .brand-name {
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .brand-sub {
+      font-size: 13px;
+      opacity: .85;
+      letter-spacing: 1px;
+    }
+
+    .flyer-catch {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    /* メイン */
+    .flyer-body {
+      padding: 40px 36px 28px;
+      flex: 1;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1a6cf7;
+      letter-spacing: 2px;
+      border-left: 3px solid #1a6cf7;
+      padding-left: 8px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    /* サービス */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .service-item {
+      background: #f0f7ff;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .service-item .icon { font-size: 26px; margin-bottom: 6px; }
+
+    .service-item .name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+
+    /* 料金 */
+    .price-block {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .price-table th {
+      background: #1a6cf7;
+      color: #fff;
+      padding: 8px 12px;
+      text-align: left;
+      font-size: 11px;
+    }
+
+    .price-table th:last-child { text-align: right; }
+
+    .price-table td {
+      padding: 7px 12px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #1e293b;
+    }
+
+    .price-table tr:last-child td { border-bottom: none; }
+
+    .price-table tr:nth-child(even) td { background: #f8fafc; }
+
+    .price-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+      color: #1a6cf7;
+      white-space: nowrap;
+    }
+
+    .price-note {
+      font-size: 10px;
+      color: #64748b;
+      padding: 8px 12px;
+      background: #fef9c3;
+      border-top: 1px solid #fde68a;
+    }
+
+    /* 出張費バナー */
+    .travel-banner {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 28px;
+      font-size: 12px;
+      color: #1e3a5f;
+      line-height: 1.7;
+    }
+
+    .travel-banner strong { color: #1a6cf7; }
+
+    /* 特徴 */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .feature-item .icon { font-size: 18px; flex-shrink: 0; }
+    .feature-item .text { line-height: 1.5; }
+    .feature-item .text strong { display: block; font-size: 13px; margin-bottom: 2px; }
+
+    /* フッター */
+    .flyer-footer {
+      background: #1e293b;
+      color: #fff;
+      padding: 24px 36px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-item .icon { font-size: 28px; }
+
+    .contact-item .label {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 2px;
+    }
+
+    .contact-item .value {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .divider {
+      width: 1px;
+      height: 40px;
+      background: #334155;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 11px;
+      color: #64748b;
+      border-top: 1px solid #334155;
+      padding-top: 12px;
+    }
+
+    .rep-name {
+      font-size: 13px;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    /* 印刷用 */
+    @media print {
+      body { background: none; padding: 0; }
+      .flyer { box-shadow: none; width: 100%; min-height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="flyer">
+
+    <!-- ヘッダー -->
+    <div class="flyer-header">
+      <div class="brand">
+        <span class="brand-icon">💻</span>
+        <div>
+          <div class="brand-name">PC GOWw</div>
+          <div class="brand-sub">長崎・時津・長与 PCサポート専門</div>
+        </div>
+      </div>
+      <div class="flyer-catch">
+        PCのトラブル解決から AI活用まで<br>
+        地域密着・丁寧サポート
+      </div>
+    </div>
+
+    <!-- ボディ -->
+    <div class="flyer-body">
+
+      <!-- サービス内容 -->
+      <div class="section-label">サービス内容</div>
+      <div class="services">
+        <div class="service-item">
+          <div class="icon">🖥️</div>
+          <div class="name">PC<br>セットアップ</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">🔧</div>
+          <div class="name">故障・トラブル<br>修理対応</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">🦠</div>
+          <div class="name">ウイルス・<br>セキュリティ対策</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">💾</div>
+          <div class="name">データ管理・<br>SSD換装</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">🌐</div>
+          <div class="name">Wi-Fi・ネット<br>ワーク設定</div>
+        </div>
+        <div class="service-item">
+          <div class="icon">🤖</div>
+          <div class="name">AI・Word・Excel<br>サポート</div>
+        </div>
+      </div>
+
+      <!-- 出張費 -->
+      <div class="travel-banner">
+        🚗 <strong>出張費：</strong>時津町・長与町・長崎市 <strong>3,500円</strong>（税込）／ その他エリア <strong>6,800円</strong>（税込）<br>
+        💻 リモートサポートは出張費不要です。
+      </div>
+
+      <!-- 料金表 -->
+      <div class="section-label">主な料金（税込）</div>
+      <div class="price-block">
+        <table class="price-table">
+          <thead>
+            <tr><th>作業内容</th><th>料金</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>新規PC初期設定（基本）</td><td>9,400円〜</td></tr>
+            <tr><td>データ移行（旧PC→新PC）</td><td>15,600円〜</td></tr>
+            <tr><td>動作が遅い・重い改善</td><td>9,400円〜</td></tr>
+            <tr><td>ウイルス・マルウェア除去</td><td>9,400円〜</td></tr>
+            <tr><td>Wi-Fiルーター設定</td><td>6,800円〜</td></tr>
+            <tr><td>AIアプリ利用サポート（1時間）</td><td>16,000円</td></tr>
+            <tr><td>Word・Excel操作サポート（1時間）</td><td>8,000円</td></tr>
+          </tbody>
+        </table>
+        <div class="price-note">
+          ※料金は基本料金です。作業内容により変動する場合があります。お支払いは現金のみ。
+        </div>
+      </div>
+
+      <!-- 特徴 -->
+      <div class="section-label">選ばれる理由</div>
+      <div class="features">
+        <div class="feature-item">
+          <span class="icon">🚀</span>
+          <div class="text"><strong>最短当日対応</strong>急なトラブルもすぐに対応します</div>
+        </div>
+        <div class="feature-item">
+          <span class="icon">💬</span>
+          <div class="text"><strong>わかりやすい説明</strong>専門用語を使わず丁寧にご説明</div>
+        </div>
+        <div class="feature-item">
+          <span class="icon">🛡️</span>
+          <div class="text"><strong>作業保証あり</strong>万が一の場合は無償で再対応</div>
+        </div>
+        <div class="feature-item">
+          <span class="icon">📅</span>
+          <div class="text"><strong>土日祝も対応</strong>年中無休でご相談いただけます</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- フッター -->
+    <div class="flyer-footer">
+      <div class="rep-name">代表：栗原 剛</div>
+      <div class="contact-row">
+        <div class="contact-item">
+          <span class="icon">📱</span>
+          <div>
+            <div class="label">携帯電話</div>
+            <div class="value">090-4584-7678</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="contact-item">
+          <span class="icon">💬</span>
+          <div>
+            <div class="label">LINE</div>
+            <div class="value">ID: pc_goww</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        PC GOWw ／ 長崎市・時津町・長与町 出張対応 ／ 受付 9:00〜20:00
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
