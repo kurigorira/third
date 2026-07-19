@@ -4,390 +4,472 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PC GOWw チラシ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background: #f0f4f8;
+      background: #0a0e1a;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 30px 16px;
+      padding: 20px;
+      min-height: 100vh;
     }
 
     .flyer {
       width: 210mm;
-      min-height: 297mm;
-      background: #fff;
-      box-shadow: 0 8px 32px rgba(0,0,0,.15);
+      height: 297mm;
+      background: #0d1117;
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
 
-    /* ヘッダー */
-    .flyer-header {
-      background: linear-gradient(135deg, #1a3a6e 0%, #1a6cf7 100%);
-      color: #fff;
-      padding: 32px 36px 28px;
-      position: relative;
-    }
-
-    .flyer-header::after {
+    /* グリッド背景 */
+    .flyer::before {
       content: '';
       position: absolute;
-      bottom: -20px;
-      left: 0; right: 0;
-      height: 40px;
-      background: #fff;
-      clip-path: ellipse(55% 100% at 50% 100%);
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,200,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,200,255,.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+      z-index: 0;
+    }
+
+    /* 光の演出 */
+    .flyer::after {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(0,140,255,.25) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .glow-right {
+      position: absolute;
+      bottom: 60px; right: -60px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(0,255,180,.15) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    /* ===== ヘッダー ===== */
+    .header {
+      position: relative;
+      z-index: 1;
+      padding: 22px 28px 18px;
+      border-bottom: 1px solid rgba(0,200,255,.2);
+      background: linear-gradient(180deg, rgba(0,100,255,.12) 0%, transparent 100%);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 16px;
     }
 
-    .brand-icon { font-size: 40px; }
+    .brand-icon-wrap {
+      width: 48px; height: 48px;
+      border: 2px solid #00c8ff;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 0 16px rgba(0,200,255,.5);
+      background: rgba(0,200,255,.08);
+    }
 
     .brand-name {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 900;
-      letter-spacing: 2px;
+      color: #fff;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px rgba(0,200,255,.6);
     }
 
     .brand-sub {
-      font-size: 13px;
-      opacity: .85;
-      letter-spacing: 1px;
-    }
-
-    .flyer-catch {
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.5;
-      margin-top: 8px;
-    }
-
-    /* メイン */
-    .flyer-body {
-      padding: 40px 36px 28px;
-      flex: 1;
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: #1a6cf7;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #00c8ff;
       letter-spacing: 2px;
-      border-left: 3px solid #1a6cf7;
-      padding-left: 8px;
-      margin-bottom: 14px;
-      text-transform: uppercase;
     }
 
-    /* サービス */
+    .header-badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      color: #00ffb4;
+      border: 1px solid #00ffb4;
+      border-radius: 4px;
+      padding: 4px 10px;
+      letter-spacing: 1px;
+      box-shadow: 0 0 8px rgba(0,255,180,.3);
+    }
+
+    .catch {
+      font-size: 17px;
+      font-weight: 700;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    .catch span {
+      color: #00c8ff;
+    }
+
+    /* ===== ボディ ===== */
+    .body {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      padding: 16px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* セクションタイトル */
+    .sec-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #00c8ff;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sec-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,200,255,.4), transparent);
+    }
+
+    /* サービスグリッド */
     .services {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 28px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
     }
 
-    .service-item {
-      background: #f0f7ff;
-      border-radius: 10px;
-      padding: 14px 12px;
+    .svc {
+      background: rgba(0,200,255,.06);
+      border: 1px solid rgba(0,200,255,.2);
+      border-radius: 8px;
+      padding: 10px 6px;
       text-align: center;
+      transition: all .2s;
     }
 
-    .service-item .icon { font-size: 26px; margin-bottom: 6px; }
+    .svc .icon { font-size: 22px; margin-bottom: 5px; display: block; }
+    .svc .name { font-size: 9.5px; color: #94a3b8; line-height: 1.4; font-weight: 700; }
 
-    .service-item .name {
-      font-size: 12px;
-      font-weight: 700;
-      color: #1e293b;
-      line-height: 1.4;
+    /* 料金テーブル */
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
     }
 
-    /* 料金 */
-    .price-block {
-      background: #fff;
-      border: 1.5px solid #e2e8f0;
-      border-radius: 12px;
-      margin-bottom: 28px;
+    .price-col {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(0,200,255,.15);
+      border-radius: 8px;
       overflow: hidden;
     }
 
-    .price-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-    }
-
-    .price-table th {
-      background: #1a6cf7;
-      color: #fff;
-      padding: 8px 12px;
-      text-align: left;
-      font-size: 11px;
-    }
-
-    .price-table th:last-child { text-align: right; }
-
-    .price-table td {
-      padding: 7px 12px;
-      border-bottom: 1px solid #f1f5f9;
-      color: #1e293b;
-    }
-
-    .price-table tr:last-child td { border-bottom: none; }
-
-    .price-table tr:nth-child(even) td { background: #f8fafc; }
-
-    .price-table td:last-child {
-      text-align: right;
+    .price-col-head {
+      background: rgba(0,200,255,.12);
+      padding: 5px 10px;
+      font-size: 10px;
       font-weight: 700;
-      color: #1a6cf7;
+      color: #00c8ff;
+      letter-spacing: 1px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      gap: 8px;
+    }
+
+    .price-row:last-child { border-bottom: none; }
+
+    .price-row .item {
+      font-size: 10px;
+      color: #94a3b8;
+      flex: 1;
+    }
+
+    .price-row .amount {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: #00ffb4;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    /* 出張費 */
+    .travel {
+      background: rgba(0,255,180,.05);
+      border: 1px solid rgba(0,255,180,.2);
+      border-radius: 8px;
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .travel .label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      color: #00ffb4;
+      letter-spacing: 2px;
       white-space: nowrap;
     }
 
-    .price-note {
-      font-size: 10px;
-      color: #64748b;
-      padding: 8px 12px;
-      background: #fef9c3;
-      border-top: 1px solid #fde68a;
+    .travel .info {
+      font-size: 11px;
+      color: #cbd5e1;
+      line-height: 1.6;
     }
 
-    /* 出張費バナー */
-    .travel-banner {
-      background: #eff6ff;
-      border: 1.5px solid #bfdbfe;
-      border-radius: 10px;
-      padding: 12px 16px;
-      margin-bottom: 28px;
-      font-size: 12px;
-      color: #1e3a5f;
-      line-height: 1.7;
-    }
-
-    .travel-banner strong { color: #1a6cf7; }
+    .travel .info strong { color: #00ffb4; }
 
     /* 特徴 */
     .features {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
+      grid-template-columns: repeat(4, 1fr);
       gap: 8px;
-      font-size: 12px;
-      background: #f8fafc;
+    }
+
+    .feat {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
       border-radius: 8px;
-      padding: 10px 12px;
+      padding: 10px 8px;
+      text-align: center;
     }
 
-    .feature-item .icon { font-size: 18px; flex-shrink: 0; }
-    .feature-item .text { line-height: 1.5; }
-    .feature-item .text strong { display: block; font-size: 13px; margin-bottom: 2px; }
+    .feat .icon { font-size: 20px; margin-bottom: 5px; }
+    .feat .title { font-size: 10px; font-weight: 700; color: #e2e8f0; margin-bottom: 3px; }
+    .feat .desc { font-size: 9px; color: #64748b; line-height: 1.4; }
 
-    /* フッター */
-    .flyer-footer {
-      background: #1e293b;
-      color: #fff;
-      padding: 24px 36px;
+    /* ===== フッター ===== */
+    .footer {
+      position: relative;
+      z-index: 1;
+      background: rgba(0,200,255,.07);
+      border-top: 1px solid rgba(0,200,255,.3);
+      padding: 14px 28px;
     }
 
-    .contact-row {
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .rep {
+      font-size: 11px;
+      color: #64748b;
+      margin-bottom: 10px;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 1px;
+    }
+
+    .contact-items {
       display: flex;
       gap: 24px;
-      justify-content: center;
       align-items: center;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
     }
 
-    .contact-item {
+    .ci {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .contact-item .icon { font-size: 28px; }
+    .ci-icon {
+      font-size: 28px;
+      filter: drop-shadow(0 0 6px rgba(0,200,255,.5));
+    }
 
-    .contact-item .label {
-      font-size: 11px;
-      color: #94a3b8;
+    .ci-label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 9px;
+      color: #00c8ff;
+      letter-spacing: 2px;
       margin-bottom: 2px;
     }
 
-    .contact-item .value {
+    .ci-value {
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 900;
+      color: #fff;
       letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(0,200,255,.4);
     }
 
     .divider {
       width: 1px;
-      height: 40px;
-      background: #334155;
+      height: 36px;
+      background: rgba(0,200,255,.3);
     }
 
-    .footer-bottom {
-      text-align: center;
-      font-size: 11px;
-      color: #64748b;
-      border-top: 1px solid #334155;
-      padding-top: 12px;
+    .footer-note {
+      font-size: 9px;
+      color: #475569;
+      text-align: right;
+      line-height: 1.7;
+      font-family: 'Share Tech Mono', monospace;
     }
 
-    .rep-name {
-      font-size: 13px;
-      color: #94a3b8;
-      text-align: center;
-      margin-bottom: 16px;
+    .price-note-bottom {
+      font-size: 9px;
+      color: #475569;
+      margin-top: 6px;
+      line-height: 1.6;
     }
 
-    /* 印刷用 */
     @media print {
-      body { background: none; padding: 0; }
-      .flyer { box-shadow: none; width: 100%; min-height: 100vh; }
+      body { background: #0d1117; padding: 0; }
+      .flyer { width: 210mm; height: 297mm; box-shadow: none; }
     }
   </style>
 </head>
 <body>
   <div class="flyer">
+    <div class="glow-right"></div>
 
     <!-- ヘッダー -->
-    <div class="flyer-header">
-      <div class="brand">
-        <span class="brand-icon">💻</span>
-        <div>
-          <div class="brand-name">PC GOWw</div>
-          <div class="brand-sub">長崎・時津・長与 PCサポート専門</div>
+    <div class="header">
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-icon-wrap">💻</div>
+          <div>
+            <div class="brand-name">PC GOWw</div>
+            <div class="brand-sub">// NAGASAKI IT SUPPORT SERVICE</div>
+          </div>
         </div>
+        <div class="header-badge">▶ 長崎・時津・長与 対応エリア</div>
       </div>
-      <div class="flyer-catch">
-        PCのトラブル解決から AI活用まで<br>
-        地域密着・丁寧サポート
+      <div class="catch">
+        PCトラブルの解決から <span>AIツール活用</span> まで ―<br>
+        地域に寄り添う、頼れるITパートナー
       </div>
     </div>
 
     <!-- ボディ -->
-    <div class="flyer-body">
+    <div class="body">
 
-      <!-- サービス内容 -->
-      <div class="section-label">サービス内容</div>
-      <div class="services">
-        <div class="service-item">
-          <div class="icon">🖥️</div>
-          <div class="name">PC<br>セットアップ</div>
-        </div>
-        <div class="service-item">
-          <div class="icon">🔧</div>
-          <div class="name">故障・トラブル<br>修理対応</div>
-        </div>
-        <div class="service-item">
-          <div class="icon">🦠</div>
-          <div class="name">ウイルス・<br>セキュリティ対策</div>
-        </div>
-        <div class="service-item">
-          <div class="icon">💾</div>
-          <div class="name">データ管理・<br>SSD換装</div>
-        </div>
-        <div class="service-item">
-          <div class="icon">🌐</div>
-          <div class="name">Wi-Fi・ネット<br>ワーク設定</div>
-        </div>
-        <div class="service-item">
-          <div class="icon">🤖</div>
-          <div class="name">AI・Word・Excel<br>サポート</div>
+      <!-- サービス -->
+      <div>
+        <div class="sec-title">// SERVICES</div>
+        <div class="services">
+          <div class="svc"><span class="icon">🖥️</span><span class="name">PC<br>セットアップ</span></div>
+          <div class="svc"><span class="icon">🔧</span><span class="name">故障・<br>トラブル修理</span></div>
+          <div class="svc"><span class="icon">🦠</span><span class="name">ウイルス・<br>セキュリティ</span></div>
+          <div class="svc"><span class="icon">💾</span><span class="name">データ管理・<br>SSD換装</span></div>
+          <div class="svc"><span class="icon">🌐</span><span class="name">Wi-Fi・<br>ネットワーク</span></div>
+          <div class="svc"><span class="icon">🤖</span><span class="name">AI・Word・<br>Excelサポート</span></div>
         </div>
       </div>
 
       <!-- 出張費 -->
-      <div class="travel-banner">
-        🚗 <strong>出張費：</strong>時津町・長与町・長崎市 <strong>3,500円</strong>（税込）／ その他エリア <strong>6,800円</strong>（税込）<br>
-        💻 リモートサポートは出張費不要です。
+      <div class="travel">
+        <div class="label">🚗 OUT_CALL_FEE</div>
+        <div class="info">
+          時津町・長与町・長崎市 <strong>3,500円</strong>（税込）／ その他エリア <strong>6,800円</strong>（税込）<br>
+          リモートサポートは出張費不要です。
+        </div>
       </div>
 
       <!-- 料金表 -->
-      <div class="section-label">主な料金（税込）</div>
-      <div class="price-block">
-        <table class="price-table">
-          <thead>
-            <tr><th>作業内容</th><th>料金</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>新規PC初期設定（基本）</td><td>9,400円〜</td></tr>
-            <tr><td>データ移行（旧PC→新PC）</td><td>15,600円〜</td></tr>
-            <tr><td>動作が遅い・重い改善</td><td>9,400円〜</td></tr>
-            <tr><td>ウイルス・マルウェア除去</td><td>9,400円〜</td></tr>
-            <tr><td>Wi-Fiルーター設定</td><td>6,800円〜</td></tr>
-            <tr><td>AIアプリ利用サポート（1時間）</td><td>16,000円</td></tr>
-            <tr><td>Word・Excel操作サポート（1時間）</td><td>8,000円</td></tr>
-          </tbody>
-        </table>
-        <div class="price-note">
-          ※料金は基本料金です。作業内容により変動する場合があります。お支払いは現金のみ。
+      <div>
+        <div class="sec-title">// PRICE LIST（税込）</div>
+        <div class="price-grid">
+          <div class="price-col">
+            <div class="price-col-head">PC サポート</div>
+            <div class="price-row"><span class="item">新規PC初期設定（基本）</span><span class="amount">¥9,400〜</span></div>
+            <div class="price-row"><span class="item">新規PC初期設定（フルセット）</span><span class="amount">¥15,600〜</span></div>
+            <div class="price-row"><span class="item">データ移行（旧PC→新PC）</span><span class="amount">¥15,600〜</span></div>
+            <div class="price-row"><span class="item">動作が遅い・重い改善</span><span class="amount">¥9,400〜</span></div>
+            <div class="price-row"><span class="item">Windowsエラー修復</span><span class="amount">¥11,200〜</span></div>
+            <div class="price-row"><span class="item">ウイルス・マルウェア除去</span><span class="amount">¥9,400〜</span></div>
+            <div class="price-row"><span class="item">HDD→SSD換装（作業費）</span><span class="amount">¥11,200〜</span></div>
+          </div>
+          <div class="price-col">
+            <div class="price-col-head">ネットワーク / AI</div>
+            <div class="price-row"><span class="item">Wi-Fiルーター設定</span><span class="amount">¥6,800〜</span></div>
+            <div class="price-row"><span class="item">Wi-Fiルーター交換・設定</span><span class="amount">¥9,400〜</span></div>
+            <div class="price-row"><span class="item">有線LAN配線・設定</span><span class="amount">¥9,400〜</span></div>
+            <div class="price-row"><span class="item">VPN設定</span><span class="amount">¥11,200〜</span></div>
+            <div class="price-row"><span class="item">AIアプリ利用サポート（1h）</span><span class="amount">¥16,000</span></div>
+            <div class="price-row"><span class="item">スライド作成サポート（1h）</span><span class="amount">¥12,000</span></div>
+            <div class="price-row"><span class="item">Word・Excel操作サポート（1h）</span><span class="amount">¥8,000</span></div>
+          </div>
         </div>
+        <div class="price-note-bottom">※基本料金です。作業内容により変動する場合があります。お支払いは現金のみ。法人のお客様は小規模事業所対象。</div>
       </div>
 
       <!-- 特徴 -->
-      <div class="section-label">選ばれる理由</div>
-      <div class="features">
-        <div class="feature-item">
-          <span class="icon">🚀</span>
-          <div class="text"><strong>最短当日対応</strong>急なトラブルもすぐに対応します</div>
-        </div>
-        <div class="feature-item">
-          <span class="icon">💬</span>
-          <div class="text"><strong>わかりやすい説明</strong>専門用語を使わず丁寧にご説明</div>
-        </div>
-        <div class="feature-item">
-          <span class="icon">🛡️</span>
-          <div class="text"><strong>作業保証あり</strong>万が一の場合は無償で再対応</div>
-        </div>
-        <div class="feature-item">
-          <span class="icon">📅</span>
-          <div class="text"><strong>土日祝も対応</strong>年中無休でご相談いただけます</div>
+      <div>
+        <div class="sec-title">// WHY CHOOSE US</div>
+        <div class="features">
+          <div class="feat"><div class="icon">🚀</div><div class="title">最短当日対応</div><div class="desc">急なトラブルも<br>すぐに対応</div></div>
+          <div class="feat"><div class="icon">💬</div><div class="title">わかりやすい説明</div><div class="desc">専門用語なしで<br>丁寧にご説明</div></div>
+          <div class="feat"><div class="icon">🛡️</div><div class="title">作業保証あり</div><div class="desc">完了後も安心の<br>無償再対応</div></div>
+          <div class="feat"><div class="icon">📅</div><div class="title">土日祝も対応</div><div class="desc">年中無休で<br>ご相談受付中</div></div>
         </div>
       </div>
 
     </div>
 
     <!-- フッター -->
-    <div class="flyer-footer">
-      <div class="rep-name">代表：栗原 剛</div>
-      <div class="contact-row">
-        <div class="contact-item">
-          <span class="icon">📱</span>
-          <div>
-            <div class="label">携帯電話</div>
-            <div class="value">090-4584-7678</div>
+    <div class="footer">
+      <div class="rep">// 代表：栗原 剛　|　個人・法人（小規模事業所）対応　|　出張・リモート対応</div>
+      <div class="footer-inner">
+        <div>
+          <div class="contact-items">
+            <div class="ci">
+              <span class="ci-icon">📱</span>
+              <div>
+                <div class="ci-label">TEL</div>
+                <div class="ci-value">090-4584-7678</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="ci">
+              <span class="ci-icon">💬</span>
+              <div>
+                <div class="ci-label">LINE ID</div>
+                <div class="ci-value">8726431</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="divider"></div>
-        <div class="contact-item">
-          <span class="icon">💬</span>
-          <div>
-            <div class="label">LINE</div>
-            <div class="value">ID: 8726431</div>
-          </div>
+        <div class="footer-note">
+          受付時間 09:00〜20:00<br>
+          長崎市・時津町・長与町 出張対応<br>
+          リモートサポート全国対応
         </div>
-      </div>
-      <div class="footer-bottom">
-        PC GOWw ／ 長崎市・時津町・長与町 出張対応 ／ 受付 9:00〜20:00
       </div>
     </div>
 
