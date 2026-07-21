@@ -10,7 +10,7 @@
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background: #0a0e1a;
+      background: #060a14;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -34,9 +34,9 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0,200,255,.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,200,255,.18) 1px, transparent 1px);
-      background-size: 24px 24px;
+        linear-gradient(rgba(0,200,255,.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,200,255,.15) 1px, transparent 1px);
+      background-size: 20px 20px;
       z-index: 0;
     }
 
@@ -44,17 +44,17 @@
     .flyer::after {
       content: '';
       position: absolute;
-      top: -80px; left: -80px;
-      width: 320px; height: 320px;
-      background: radial-gradient(circle, rgba(0,140,255,.25) 0%, transparent 70%);
+      top: -60px; left: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0,140,255,.2) 0%, transparent 70%);
       z-index: 0;
     }
 
     .glow-right {
       position: absolute;
-      bottom: 60px; right: -60px;
-      width: 260px; height: 260px;
-      background: radial-gradient(circle, rgba(0,255,180,.15) 0%, transparent 70%);
+      bottom: 40px; right: -40px;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, rgba(0,255,180,.12) 0%, transparent 70%);
       z-index: 0;
     }
 
@@ -62,9 +62,9 @@
     .header {
       position: relative;
       z-index: 1;
-      padding: 22px 28px 18px;
-      border-bottom: 1px solid rgba(0,200,255,.45);
-      background: linear-gradient(180deg, rgba(0,100,255,.12) 0%, transparent 100%);
+      padding: 20px 26px 16px;
+      border-bottom: 2px solid rgba(0,200,255,.7);
+      background: linear-gradient(180deg, rgba(0,100,255,.18) 0%, transparent 100%);
     }
 
     .header-top {
@@ -77,54 +77,58 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .brand-icon-wrap {
-      width: 48px; height: 48px;
+      width: 54px; height: 54px;
       border: 2px solid #00c8ff;
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 26px;
-      box-shadow: 0 0 16px rgba(0,200,255,.5);
-      background: rgba(0,200,255,.08);
+      font-size: 30px;
+      box-shadow: 0 0 20px rgba(0,200,255,.6);
+      background: rgba(0,200,255,.12);
     }
 
     .brand-name {
-      font-size: 32px;
+      font-size: 42px;
       font-weight: 900;
       color: #fff;
-      letter-spacing: 3px;
-      text-shadow: 0 0 20px rgba(0,200,255,.6);
+      letter-spacing: 4px;
+      text-shadow: 0 0 24px rgba(0,200,255,.8), 0 0 8px rgba(0,200,255,.4);
     }
 
     .brand-sub {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 10px;
+      font-size: 12px;
       color: #00c8ff;
       letter-spacing: 2px;
+      margin-top: 2px;
     }
 
     .header-badge {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 9px;
+      font-size: 12px;
       color: #00ffb4;
-      border: 1px solid #00ffb4;
-      border-radius: 4px;
-      padding: 4px 10px;
+      border: 2px solid #00ffb4;
+      border-radius: 6px;
+      padding: 6px 14px;
       letter-spacing: 1px;
-      box-shadow: 0 0 8px rgba(0,255,180,.3);
+      box-shadow: 0 0 10px rgba(0,255,180,.4);
+      font-weight: 700;
     }
 
     .catch {
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.5;
+      text-shadow: 0 1px 4px rgba(0,0,0,.5);
     }
 
     .catch span {
-      color: #00c8ff;
+      color: #00e5ff;
+      text-shadow: 0 0 12px rgba(0,200,255,.6);
     }
 
     /* ===== ボディ ===== */
@@ -132,7 +136,7 @@
       position: relative;
       z-index: 1;
       flex: 1;
-      padding: 12px 28px;
+      padding: 12px 26px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -141,19 +145,20 @@
     /* セクションタイトル */
     .sec-title {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 10px;
-      color: #00c8ff;
+      font-size: 13px;
+      color: #00e5ff;
       letter-spacing: 3px;
       margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
+      font-weight: 700;
     }
     .sec-title::after {
       content: '';
       flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(0,200,255,.8), transparent);
+      height: 2px;
+      background: linear-gradient(90deg, rgba(0,200,255,.9), transparent);
     }
 
     /* サービスグリッド */
@@ -164,16 +169,15 @@
     }
 
     .svc {
-      background: rgba(0,200,255,.18);
-      border: 1px solid rgba(0,200,255,.45);
+      background: rgba(0,200,255,.22);
+      border: 2px solid rgba(0,200,255,.6);
       border-radius: 8px;
       padding: 10px 6px;
       text-align: center;
-      transition: all .2s;
     }
 
-    .svc .icon { font-size: 22px; margin-bottom: 5px; display: block; }
-    .svc .name { font-size: 9.5px; color: #e2e8f0; line-height: 1.4; font-weight: 700; }
+    .svc .icon { font-size: 24px; margin-bottom: 6px; display: block; }
+    .svc .name { font-size: 12px; color: #ffffff; line-height: 1.5; font-weight: 700; }
 
     /* 料金テーブル */
     .price-grid {
@@ -183,73 +187,77 @@
     }
 
     .price-col {
-      background: rgba(255,255,255,.18);
-      border: 1px solid rgba(0,200,255,.35);
+      background: rgba(255,255,255,.10);
+      border: 2px solid rgba(0,200,255,.5);
       border-radius: 8px;
       overflow: hidden;
     }
 
     .price-col-head {
-      background: rgba(0,200,255,.28);
-      padding: 5px 10px;
-      font-size: 10px;
-      font-weight: 700;
-      color: #00c8ff;
-      letter-spacing: 1px;
+      background: rgba(0,200,255,.40);
+      padding: 7px 12px;
+      font-size: 14px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 2px;
     }
 
     .price-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 5px 10px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
+      padding: 6px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.15);
       gap: 8px;
     }
 
     .price-row:last-child { border-bottom: none; }
 
     .price-row .item {
-      font-size: 10px;
-      color: #e2e8f0;
+      font-size: 12px;
+      color: #f0f8ff;
       flex: 1;
+      font-weight: 500;
     }
 
     .price-row .amount {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 11px;
+      font-size: 14px;
       color: #00ffb4;
       white-space: nowrap;
       font-weight: 700;
+      text-shadow: 0 0 8px rgba(0,255,180,.5);
     }
 
     /* 出張費 */
     .travel {
-      background: rgba(0,255,180,.12);
-      border: 1px solid rgba(0,255,180,.45);
+      background: rgba(0,255,180,.16);
+      border: 2px solid rgba(0,255,180,.6);
       border-radius: 8px;
-      padding: 9px 14px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
     .travel .label {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 9px;
+      font-size: 12px;
       color: #00ffb4;
       letter-spacing: 2px;
       white-space: nowrap;
+      font-weight: 700;
     }
 
     .travel .info {
-      font-size: 11px;
-      color: #f1f5f9;
-      line-height: 1.6;
+      font-size: 13px;
+      color: #ffffff;
+      line-height: 1.7;
+      font-weight: 500;
     }
 
-    .travel .info strong { color: #00ffb4; }
+    .travel .info strong { color: #00ffb4; font-size: 15px; }
 
     /* 特徴 */
     .features {
@@ -259,24 +267,24 @@
     }
 
     .feat {
-      background: rgba(255,255,255,.18);
-      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.14);
+      border: 2px solid rgba(0,200,255,.4);
       border-radius: 8px;
       padding: 10px 8px;
       text-align: center;
     }
 
-    .feat .icon { font-size: 20px; margin-bottom: 5px; }
-    .feat .title { font-size: 10px; font-weight: 700; color: #e2e8f0; margin-bottom: 3px; }
-    .feat .desc { font-size: 9px; color: #cbd5e1; line-height: 1.4; }
+    .feat .icon { font-size: 22px; margin-bottom: 5px; }
+    .feat .title { font-size: 13px; font-weight: 900; color: #ffffff; margin-bottom: 4px; }
+    .feat .desc { font-size: 11px; color: #cce8ff; line-height: 1.5; }
 
     /* ===== フッター ===== */
     .footer {
       position: relative;
       z-index: 1;
-      background: rgba(0,200,255,.18);
-      border-top: 2px solid rgba(0,200,255,.6);
-      padding: 14px 28px;
+      background: rgba(0,150,255,.22);
+      border-top: 3px solid rgba(0,200,255,.8);
+      padding: 14px 26px;
     }
 
     .footer-inner {
@@ -287,16 +295,17 @@
     }
 
     .rep {
-      font-size: 11px;
-      color: #cbd5e1;
-      margin-bottom: 10px;
+      font-size: 13px;
+      color: #cce8ff;
+      margin-bottom: 12px;
       font-family: 'Share Tech Mono', monospace;
       letter-spacing: 1px;
+      font-weight: 700;
     }
 
     .contact-items {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
     }
 
@@ -307,43 +316,45 @@
     }
 
     .ci-icon {
-      font-size: 28px;
-      filter: drop-shadow(0 0 6px rgba(0,200,255,.5));
+      font-size: 32px;
+      filter: drop-shadow(0 0 8px rgba(0,200,255,.7));
     }
 
     .ci-label {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 9px;
-      color: #00c8ff;
+      font-size: 12px;
+      color: #00e5ff;
       letter-spacing: 2px;
       margin-bottom: 2px;
+      font-weight: 700;
     }
 
     .ci-value {
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 900;
-      color: #fff;
-      letter-spacing: 1px;
-      text-shadow: 0 0 10px rgba(0,200,255,.8);
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 14px rgba(0,200,255,.9);
     }
 
     .divider {
-      width: 1px;
-      height: 36px;
-      background: rgba(0,200,255,.3);
+      width: 2px;
+      height: 44px;
+      background: rgba(0,200,255,.5);
     }
 
     .footer-note {
-      font-size: 9px;
-      color: #94a3b8;
+      font-size: 12px;
+      color: #cce8ff;
       text-align: right;
-      line-height: 1.7;
+      line-height: 1.8;
       font-family: 'Share Tech Mono', monospace;
+      font-weight: 700;
     }
 
     .price-note-bottom {
-      font-size: 9px;
-      color: #94a3b8;
+      font-size: 11px;
+      color: #cce8ff;
       margin-top: 6px;
       line-height: 1.6;
     }
@@ -360,31 +371,32 @@
     }
 
     .qr-box {
-      width: 72px;
-      height: 72px;
+      width: 76px;
+      height: 76px;
       background: #fff;
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 4px;
-      box-shadow: 0 0 12px rgba(0,200,255,.8);
+      box-shadow: 0 0 16px rgba(0,200,255,.9);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
     }
 
-    .qr-box canvas, .qr-box img { width: 64px !important; height: 64px !important; }
+    .qr-box img { width: 68px !important; height: 68px !important; }
 
     .qr-label {
       font-family: 'Share Tech Mono', monospace;
-      font-size: 8px;
-      color: #00c8ff;
+      font-size: 11px;
+      color: #00e5ff;
       margin-top: 5px;
       letter-spacing: 1px;
+      font-weight: 700;
     }
 
     @media print {
       body { background: #0d1117; padding: 0; }
-      .flyer { width: 210mm; height: 297mm; box-shadow: none; }
+      .flyer { width: 210mm; min-height: 297mm; box-shadow: none; }
     }
   </style>
 </head>
@@ -504,13 +516,13 @@
         <div class="qr-area">
           <div class="qr-item">
             <div class="qr-box">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=64x64&data=https://kurigorira.github.io/third/" alt="サイトQR">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=68x68&data=https://kurigorira.github.io/third/" alt="サイトQR">
             </div>
             <div class="qr-label">🌐 WEB SITE</div>
           </div>
           <div class="qr-item">
             <div class="qr-box">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=64x64&data=https://line.me/ti/p/~8726431" alt="LINE QR">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=68x68&data=https://line.me/ti/p/~8726431" alt="LINE QR">
             </div>
             <div class="qr-label">💬 LINE</div>
           </div>
