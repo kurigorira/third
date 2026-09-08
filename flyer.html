@@ -33,9 +33,9 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0,180,255,.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,180,255,.12) 1px, transparent 1px);
-      background-size: 28px 28px;
+        linear-gradient(rgba(0,180,255,.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,180,255,.10) 1px, transparent 1px);
+      background-size: 26px 26px;
       z-index: 0;
     }
 
@@ -43,35 +43,35 @@
     .header {
       position: relative;
       z-index: 1;
-      padding: 36px 40px 28px;
+      padding: 28px 36px 22px;
       text-align: center;
       border-bottom: 3px solid #00c8ff;
-      background: linear-gradient(180deg, rgba(0,100,255,.25) 0%, transparent 100%);
+      background: linear-gradient(180deg, rgba(0,100,255,.28) 0%, transparent 100%);
     }
 
     .brand-name {
-      font-size: 72px;
+      font-size: 68px;
       font-weight: 900;
       color: #fff;
       letter-spacing: 6px;
-      text-shadow: 0 0 30px rgba(0,200,255,.9), 0 0 10px rgba(0,200,255,.5);
+      text-shadow: 0 0 28px rgba(0,200,255,.9), 0 0 8px rgba(0,200,255,.5);
       line-height: 1;
     }
 
     .brand-sub {
-      font-size: 16px;
+      font-size: 15px;
       color: #00c8ff;
       letter-spacing: 4px;
-      margin-top: 8px;
+      margin-top: 6px;
       font-weight: 700;
     }
 
     .catch {
-      font-size: 24px;
+      font-size: 19px;
       font-weight: 700;
       color: #fff;
-      margin-top: 18px;
-      line-height: 1.6;
+      margin-top: 14px;
+      line-height: 1.7;
     }
 
     .catch em {
@@ -79,30 +79,42 @@
       color: #00ffb4;
     }
 
+    .se-badge {
+      display: inline-block;
+      background: rgba(0,255,180,.18);
+      border: 2px solid #00ffb4;
+      border-radius: 6px;
+      color: #00ffb4;
+      font-size: 16px;
+      font-weight: 900;
+      padding: 4px 18px;
+      margin-top: 8px;
+      letter-spacing: 2px;
+    }
+
     /* ===== ボディ ===== */
     .body {
       position: relative;
       z-index: 1;
       flex: 1;
-      padding: 30px 40px;
+      padding: 18px 36px;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 16px;
     }
 
-    /* エリア */
+    /* 対応エリア */
     .area-bar {
-      background: rgba(0,200,255,.18);
-      border: 2px solid rgba(0,200,255,.6);
+      background: rgba(0,200,255,.15);
+      border: 2px solid rgba(0,200,255,.55);
       border-radius: 10px;
-      padding: 14px 24px;
+      padding: 10px 20px;
       text-align: center;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: #fff;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
     }
-
     .area-bar span { color: #00ffb4; }
 
     /* セクションタイトル */
@@ -111,7 +123,7 @@
       font-weight: 900;
       color: #00c8ff;
       letter-spacing: 4px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -127,54 +139,99 @@
     .services {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
     }
 
     .svc {
-      background: rgba(0,200,255,.15);
-      border: 2px solid rgba(0,200,255,.5);
+      background: rgba(0,200,255,.14);
+      border: 2px solid rgba(0,200,255,.48);
       border-radius: 10px;
-      padding: 16px 20px;
+      padding: 13px 16px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .svc .icon { font-size: 32px; flex-shrink: 0; }
-    .svc .name { font-size: 18px; font-weight: 700; color: #fff; line-height: 1.4; }
+    .svc .icon { font-size: 28px; flex-shrink: 0; }
+    .svc .name { font-size: 16px; font-weight: 700; color: #fff; line-height: 1.5; }
+    .svc .sub  { font-size: 12px; color: #7dd8ff; margin-top: 2px; }
+
+    /* 価格セクション */
+    .price-section {
+      background: rgba(255,255,255,.06);
+      border: 2px solid rgba(0,200,255,.45);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .price-head {
+      background: rgba(0,200,255,.35);
+      padding: 9px 18px;
+      font-size: 15px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 3px;
+    }
+
+    .price-body {
+      padding: 12px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .price-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .price-row .p-label { font-size: 15px; font-weight: 700; color: #e8f4ff; }
+    .price-row .p-val   { font-size: 16px; font-weight: 900; color: #00ffb4; white-space: nowrap; }
+
+    .price-note {
+      font-size: 12px;
+      color: #7dd8ff;
+      margin-top: 8px;
+      line-height: 1.7;
+      padding: 0 18px 12px;
+    }
 
     /* 特徴 */
     .points {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 10px;
     }
 
     .point {
-      background: rgba(0,255,180,.12);
-      border: 2px solid rgba(0,255,180,.5);
+      background: rgba(0,255,180,.11);
+      border: 2px solid rgba(0,255,180,.45);
       border-radius: 10px;
-      padding: 16px 12px;
+      padding: 14px 10px;
       text-align: center;
     }
 
-    .point .icon { font-size: 30px; margin-bottom: 8px; }
-    .point .title { font-size: 16px; font-weight: 900; color: #fff; margin-bottom: 4px; }
-    .point .desc { font-size: 14px; color: #b0deff; line-height: 1.5; }
+    .point .icon  { font-size: 28px; margin-bottom: 6px; }
+    .point .title { font-size: 15px; font-weight: 900; color: #fff; margin-bottom: 4px; }
+    .point .desc  { font-size: 13px; color: #b0deff; line-height: 1.5; }
 
     /* ===== フッター ===== */
     .footer {
       position: relative;
       z-index: 1;
-      background: rgba(0,150,255,.25);
+      background: rgba(0,130,255,.22);
       border-top: 3px solid #00c8ff;
-      padding: 24px 40px;
+      padding: 18px 36px;
     }
 
     .rep {
-      font-size: 15px;
+      font-size: 14px;
       color: #b0deff;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       letter-spacing: 2px;
       font-weight: 700;
       text-align: center;
@@ -184,25 +241,25 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
     }
 
     .contact-block {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
     .ci {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .ci-icon { font-size: 36px; }
+    .ci-icon { font-size: 32px; }
 
     .ci-label {
-      font-size: 13px;
+      font-size: 12px;
       color: #00c8ff;
       font-weight: 900;
       letter-spacing: 3px;
@@ -210,55 +267,70 @@
     }
 
     .ci-value {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 900;
       color: #fff;
-      letter-spacing: 3px;
-      text-shadow: 0 0 16px rgba(0,200,255,.8);
+      letter-spacing: 2px;
+      text-shadow: 0 0 14px rgba(0,200,255,.8);
     }
 
     /* QRコード */
     .qr-area {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       align-items: center;
     }
 
     .qr-item { text-align: center; }
 
     .qr-box {
-      width: 90px;
-      height: 90px;
+      width: 88px;
+      height: 88px;
       background: #fff;
       border-radius: 10px;
       padding: 5px;
-      box-shadow: 0 0 20px rgba(0,200,255,.9);
+      box-shadow: 0 0 18px rgba(0,200,255,.85);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .qr-box img { width: 80px; height: 80px; }
+    .qr-box img { width: 78px; height: 78px; display: block; }
 
     .qr-label {
-      font-size: 13px;
+      font-size: 12px;
       color: #00c8ff;
-      margin-top: 6px;
+      margin-top: 5px;
       font-weight: 700;
       letter-spacing: 1px;
     }
 
     .footer-note {
-      font-size: 14px;
+      font-size: 13px;
       color: #b0deff;
       text-align: right;
       line-height: 2;
       font-weight: 700;
     }
 
+    /* ===== 印刷用 ===== */
     @media print {
-      body { background: #0b1120; padding: 0; }
-      .flyer { width: 210mm; min-height: 297mm; }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+      body {
+        background: #0b1120 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .flyer {
+        width: 210mm !important;
+        min-height: 297mm !important;
+        box-shadow: none !important;
+      }
     }
   </style>
 </head>
@@ -273,6 +345,7 @@
         PCトラブル・<em>AIツール活用</em>・ネットワーク設定<br>
         なんでもお気軽にご相談ください
       </div>
+      <div class="se-badge">✅ 現役のSEが対応します</div>
     </div>
 
     <!-- ボディ -->
@@ -280,23 +353,92 @@
 
       <!-- 対応エリア -->
       <div class="area-bar">
-        📍 対応エリア：<span>長崎市・時津町・長与町</span>（その他要相談）
+        📍 対応エリア：<span>長崎市・時津町・長与町</span>（その他エリアはご相談ください）
       </div>
 
       <!-- サービス -->
       <div>
         <div class="sec-title">▶ サービス内容</div>
         <div class="services">
-          <div class="svc"><span class="icon">🖥️</span><span class="name">PC セットアップ・初期設定</span></div>
-          <div class="svc"><span class="icon">🔧</span><span class="name">故障・トラブル修理</span></div>
-          <div class="svc"><span class="icon">🦠</span><span class="name">ウイルス・セキュリティ対策</span></div>
-          <div class="svc"><span class="icon">💾</span><span class="name">データ移行・SSD換装</span></div>
-          <div class="svc"><span class="icon">🌐</span><span class="name">Wi-Fi・ネットワーク設定</span></div>
-          <div class="svc"><span class="icon">🤖</span><span class="name">AI・Word・Excelサポート</span></div>
+          <div class="svc">
+            <span class="icon">🖥️</span>
+            <div>
+              <div class="name">PC セットアップ・初期設定</div>
+              <div class="sub">新しいPCの設定からデータ移行まで</div>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="icon">🤖</span>
+            <div>
+              <div class="name">ChatGPT / Gemini / Claude</div>
+              <div class="sub">AIツールの使い方・活用サポート</div>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="icon">🦠</span>
+            <div>
+              <div class="name">ウイルス・セキュリティ対策</div>
+              <div class="sub">マルウェア除去・安全設定</div>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="icon">💾</span>
+            <div>
+              <div class="name">データ管理・SSD換装</div>
+              <div class="sub">高速化・バックアップ設定</div>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="icon">🌐</span>
+            <div>
+              <div class="name">Wi-Fi・ネットワーク設定</div>
+              <div class="sub">ルーター設定・有線LAN・VPN</div>
+            </div>
+          </div>
+          <div class="svc">
+            <span class="icon">📊</span>
+            <div>
+              <div class="name">Word・Excel・スライド</div>
+              <div class="sub">操作サポート・資料作成支援</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- 特徴 -->
+      <!-- 価格について -->
+      <div>
+        <div class="sec-title">▶ 価格について（税込）</div>
+        <div class="price-section">
+          <div class="price-head">💰 料金の目安</div>
+          <div class="price-body">
+            <div class="price-row">
+              <span class="p-label">📌 出張費（長崎市・時津町・長与町）</span>
+              <span class="p-val">3,500円〜</span>
+            </div>
+            <div class="price-row">
+              <span class="p-label">📌 出張費（その他エリア）</span>
+              <span class="p-val">6,800円〜</span>
+            </div>
+            <div class="price-row">
+              <span class="p-label">🖥️ PC初期設定・各種サポート</span>
+              <span class="p-val">9,400円〜</span>
+            </div>
+            <div class="price-row">
+              <span class="p-label">🤖 AIツール活用サポート（1時間）</span>
+              <span class="p-val">16,000円〜</span>
+            </div>
+            <div class="price-row">
+              <span class="p-label">🌐 ネットワーク設定・Wi-Fi</span>
+              <span class="p-val">6,800円〜</span>
+            </div>
+          </div>
+          <div class="price-note">
+            ※リモートサポートは出張費不要です　※お支払いは現金のみ　※詳しくはWebサイトをご覧ください
+          </div>
+        </div>
+      </div>
+
+      <!-- 選ばれる理由 -->
       <div>
         <div class="sec-title">▶ 選ばれる理由</div>
         <div class="points">
@@ -322,7 +464,7 @@
 
     <!-- フッター -->
     <div class="footer">
-      <div class="rep">代表：栗原 剛　｜　出張・リモート対応　｜　お支払いは現金のみ</div>
+      <div class="rep">代表：栗原 剛（現役SE）　｜　出張・リモート対応　｜　お支払いは現金のみ</div>
       <div class="footer-inner">
 
         <div class="contact-block">
@@ -330,7 +472,7 @@
             <span class="ci-icon">📱</span>
             <div>
               <div class="ci-label">TEL</div>
-              <div class="ci-value">090-4584-7678</div>
+              <div class="ci-value">080-5625-8817</div>
             </div>
           </div>
           <div class="ci">
@@ -345,13 +487,13 @@
         <div class="qr-area">
           <div class="qr-item">
             <div class="qr-box">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://kurigorira.github.io/third/" alt="サイトQR">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=78x78&data=https://kurigorira.github.io/third/" alt="サイトQR">
             </div>
             <div class="qr-label">🌐 WEB SITE</div>
           </div>
           <div class="qr-item">
             <div class="qr-box">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://line.me/ti/p/~8726431" alt="LINE QR">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=78x78&data=https://line.me/ti/p/~8726431" alt="LINE QR">
             </div>
             <div class="qr-label">💬 LINE</div>
           </div>
