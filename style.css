@@ -106,8 +106,8 @@ body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: 
 
 /* Track record */
 .record { padding: 110px 0; background: var(--white); }
-.record-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-.record-card { border: 1px solid var(--border); padding: 34px 28px; }
+.record-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.record-card { border: 1px solid var(--border); padding: 22px 20px; }
 .record-card .no { font-size: 11px; letter-spacing: .4em; color: #aaa; margin-bottom: 12px; display: block; }
 .record-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 10px; letter-spacing: .12em; }
 .record-card p { font-size: 13px; color: var(--text-light); }

@@ -9,21 +9,21 @@
     body { font-family: 'Noto Sans JP', sans-serif; background: #d9d9d7; display: flex; justify-content: center; padding: 20px; color: #111; }
     .flyer { width: 210mm; height: 297mm; background: #fff; display: flex; flex-direction: column; overflow: hidden; }
 
-    .header { background: #0c0c0c; color: #fff; text-align: center; padding: 11mm 14mm 9mm; }
+    .header { background: #0c0c0c; color: #fff; text-align: center; padding: 7mm 14mm 5mm; }
     .en { font-size: 11px; letter-spacing: .5em; color: #aaa; }
-    .brand { font-size: 60px; font-weight: 300; letter-spacing: .14em; line-height: 1.1; margin: 6px 0 8px; }
-    .catch { font-size: 21px; font-weight: 500; letter-spacing: .12em; line-height: 1.6; }
+    .brand { font-size: 46px; font-weight: 300; letter-spacing: .14em; line-height: 1.1; margin: 6px 0 8px; }
+    .catch { font-size: 19px; font-weight: 500; letter-spacing: .12em; line-height: 1.6; }
     .badge { display: inline-block; margin-top: 10px; border: 1px solid #fff; padding: 3px 18px; font-size: 14px; letter-spacing: .2em; }
 
-    .body { flex: 1; padding: 7mm 14mm 4mm; display: flex; flex-direction: column; gap: 5mm; }
-    .sec { font-size: 11px; letter-spacing: .4em; color: #777; margin-bottom: 7px; display: flex; align-items: center; gap: 10px; }
+    .body { flex: 1; padding: 4.5mm 14mm 3mm; display: flex; flex-direction: column; gap: 3.2mm; }
+    .sec { font-size: 11px; letter-spacing: .4em; color: #777; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
     .sec::after { content: ''; flex: 1; height: 1px; background: #ccc; }
 
-    .lead { font-size: 14px; line-height: 1.9; font-weight: 500; }
+    .lead { font-size: 13px; line-height: 1.75; font-weight: 500; }
     .lead b { font-weight: 900; border-bottom: 2px solid #111; }
 
     .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .card { border: 1px solid #111; padding: 9px 11px; }
+    .card { border: 1px solid #111; padding: 6px 10px; }
     .card h4 { font-size: 15px; font-weight: 700; letter-spacing: .06em; margin-bottom: 3px; }
     .card p { font-size: 12px; line-height: 1.6; color: #333; }
     .card.dark { background: #111; color: #fff; }
@@ -35,16 +35,16 @@
 
     .price { border: 1px solid #111; }
     .price-head { background: #111; color: #fff; font-size: 13px; letter-spacing: .3em; padding: 4px 12px; }
-    .price-row { display: flex; justify-content: space-between; font-size: 14px; padding: 4px 12px; border-bottom: 1px solid #ddd; font-weight: 500; }
+    .price-row { display: flex; justify-content: space-between; font-size: 13px; padding: 2px 12px; border-bottom: 1px solid #ddd; font-weight: 500; }
     .price-row:last-of-type { border-bottom: none; }
     .price-row span:last-child { font-weight: 900; font-size: 16px; }
     .note { font-size: 11px; color: #555; padding: 3px 12px 6px; }
 
-    .footer { background: #0c0c0c; color: #fff; padding: 6mm 14mm; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .footer { background: #0c0c0c; color: #fff; padding: 4mm 14mm; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
     .rep { font-size: 12px; letter-spacing: .15em; color: #bbb; margin-bottom: 6px; }
     .ci { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
     .ci small { font-size: 12px; letter-spacing: .25em; color: #aaa; width: 62px; }
-    .ci b { font-size: 29px; font-weight: 700; letter-spacing: .06em; }
+    .ci b { font-size: 26px; font-weight: 700; letter-spacing: .06em; }
     .ci.sm b { font-size: 22px; }
     .hours { font-size: 12px; color: #ccc; margin-top: 4px; }
     .qrs { display: flex; gap: 12px; }
@@ -72,26 +72,33 @@
   <div class="body">
 
     <div class="lead">
-      PCの設定やトラブル対応だけでなく、<b>職員色注文アプリ・ビットコイン売買ツール</b>など、数多くのアプリや業務課題を解決してきた経験があります。<br>
-      「AIで何ができる？」「うちの仕事にも使える？」そんなご相談から、業務アプリの開発まで対応します。
+      AIは「<b>何でも相談できる、文章が得意なアシスタント</b>」です。むずかしい操作は不要。話しかけるように文字を打つだけ。<br>
+      パソコンが苦手な方にも、画面を見ながら一緒に、ていねいにお教えします。
     </div>
 
     <div>
-      <div class="sec">AI FOR BUSINESS — AIで何ができる？</div>
+      <div class="sec">AIで何ができる？ — 職場での例</div>
       <div class="grid3">
-        <div class="card dark"><h4>ChatGPT / Gemini / Claude</h4><p>使い方レクチャー・業務への活用提案</p></div>
-        <div class="card"><h4>文章・資料づくり</h4><p>メール・報告書・スライドの下書きを数分で</p></div>
-        <div class="card"><h4>業務アプリ・自動化</h4><p>日々の作業を楽にするツールを試作・開発</p></div>
+        <div class="card dark"><h4>文書づくり</h4><p>お知らせ・案内文・報告書の下書きを、すぐ作成</p></div>
+        <div class="card"><h4>言い換え・要約</h4><p>専門用語をやさしい言葉に。長い文章を3行に</p></div>
+        <div class="card"><h4>Excelのお助け</h4><p>勤務表・集計表の計算のやり方を教えてくれる</p></div>
       </div>
     </div>
 
     <div>
-      <div class="sec">MERIT — 企業にとってのAI活用メリット</div>
+      <div class="sec">MERIT — 職場にとってのメリット</div>
       <div class="merit">
-        <div><strong>時間を生む</strong>定型業務を大幅に短縮</div>
-        <div><strong>品質を揃える</strong>担当者によるバラつきを減らす</div>
-        <div><strong>属人化を解消</strong>ノウハウを共有・引き継ぎ</div>
-        <div><strong>低コスト</strong>月額数千円から小さく開始</div>
+        <div><strong>時間にゆとり</strong>事務作業が減り、人と向き合う時間に</div>
+        <div><strong>ミスが減る</strong>書き漏れ・計算間違いを防ぐ</div>
+        <div><strong>引き継ぎ安心</strong>「あの人しか分からない」を解消</div>
+        <div><strong>小さく安く</strong>無料〜月数千円から始められる</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec">WORKS — 作ったアプリ・ツール</div>
+      <div class="card" style="font-size:12.5px;line-height:1.8;">
+        自動売買ツール／職員食の注文・集計アプリ／患者数・時間外勤務の集計アプリ／健診センター業務管理／予防接種の申込フォーム／空きベッド情報／作業の自動化（RPA）／家計管理アプリ／楽譜管理サイト／バス到着通知／家庭のセキュリティ対策 ほか<span style="color:#777">　詳しくはWebサイトへ</span>
       </div>
     </div>
 
