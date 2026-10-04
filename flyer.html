@@ -2,142 +2,211 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PC GOWw チラシ</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Noto Sans JP', sans-serif; background: #d9d9d7; display: flex; justify-content: center; padding: 20px; color: #111; }
-    .flyer { width: 210mm; height: 297mm; background: #fff; display: flex; flex-direction: column; overflow: hidden; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #d9d9d7; color: #111; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
 
-    .header { background: #0c0c0c; color: #fff; text-align: center; padding: 7mm 14mm 5mm; }
-    .en { font-size: 11px; letter-spacing: .5em; color: #aaa; }
-    .brand { font-size: 46px; font-weight: 300; letter-spacing: .14em; line-height: 1.1; margin: 6px 0 8px; }
-    .catch { font-size: 19px; font-weight: 500; letter-spacing: .12em; line-height: 1.6; }
-    .badge { display: inline-block; margin-top: 10px; border: 1px solid #fff; padding: 3px 18px; font-size: 14px; letter-spacing: .2em; }
+    .page { width: 210mm; height: 297mm; background: #fff; display: flex; flex-direction: column; overflow: hidden; }
+    .pad { padding: 0 14mm; }
 
-    .body { flex: 1; padding: 4.5mm 14mm 3mm; display: flex; flex-direction: column; gap: 3.2mm; }
-    .sec { font-size: 11px; letter-spacing: .4em; color: #777; margin-bottom: 4px; display: flex; align-items: center; gap: 10px; }
-    .sec::after { content: ''; flex: 1; height: 1px; background: #ccc; }
+    /* 共通 */
+    .sec { font-size: 13px; letter-spacing: .35em; color: #666; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .sec::after { content: ''; flex: 1; height: 1px; background: #bbb; }
+    .h2 { font-size: 24px; font-weight: 900; letter-spacing: .08em; margin-bottom: 10px; }
+    .page-no { font-size: 11px; letter-spacing: .3em; color: #888; }
 
-    .lead { font-size: 13px; line-height: 1.75; font-weight: 500; }
-    .lead b { font-weight: 900; border-bottom: 2px solid #111; }
+    /* ===== 1枚目 ===== */
+    .hero { background: #0c0c0c; color: #fff; text-align: center; padding: 11mm 14mm 8mm; }
+    .en { font-size: 12px; letter-spacing: .5em; color: #aaa; }
+    .brand { font-size: 76px; font-weight: 300; letter-spacing: .14em; line-height: 1.1; margin: 10px 0 14px; }
+    .catch { font-size: 25px; font-weight: 700; letter-spacing: .1em; line-height: 1.6; }
+    .badge { display: inline-block; margin-top: 16px; border: 2px solid #fff; padding: 6px 26px; font-size: 19px; font-weight: 700; letter-spacing: .2em; }
 
-    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .card { border: 1px solid #111; padding: 6px 10px; }
-    .card h4 { font-size: 15px; font-weight: 700; letter-spacing: .06em; margin-bottom: 3px; }
-    .card p { font-size: 12px; line-height: 1.6; color: #333; }
-    .card.dark { background: #111; color: #fff; }
-    .card.dark p { color: #ddd; }
+    .p1-body { flex: 1; padding-top: 7mm; padding-bottom: 5mm; display: flex; flex-direction: column; gap: 6.5mm; }
+    .area { border: 2px solid #111; text-align: center; padding: 10px; font-size: 19px; font-weight: 700; letter-spacing: .1em; }
 
-    .merit { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-    .merit div { border-top: 3px solid #111; padding-top: 6px; font-size: 12px; line-height: 1.6; color: #333; }
-    .merit strong { display: block; font-size: 15px; color: #111; margin-bottom: 2px; }
+    .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .svc { border: 1px solid #111; padding: 12px 14px; }
+    .svc.dark { background: #111; color: #fff; }
+    .svc h4 { font-size: 19px; font-weight: 900; letter-spacing: .05em; margin-bottom: 3px; }
+    .svc p { font-size: 14px; line-height: 1.6; color: #333; }
+    .svc.dark p { color: #ddd; }
 
-    .price { border: 1px solid #111; }
-    .price-head { background: #111; color: #fff; font-size: 13px; letter-spacing: .3em; padding: 4px 12px; }
-    .price-row { display: flex; justify-content: space-between; font-size: 13px; padding: 2px 12px; border-bottom: 1px solid #ddd; font-weight: 500; }
-    .price-row:last-of-type { border-bottom: none; }
-    .price-row span:last-child { font-weight: 900; font-size: 16px; }
-    .note { font-size: 11px; color: #555; padding: 3px 12px 6px; }
+    .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .points div { border-top: 4px solid #111; padding-top: 8px; font-size: 14px; line-height: 1.6; color: #333; }
+    .points strong { display: block; font-size: 19px; color: #111; margin-bottom: 2px; }
 
-    .footer { background: #0c0c0c; color: #fff; padding: 4mm 14mm; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
-    .rep { font-size: 12px; letter-spacing: .15em; color: #bbb; margin-bottom: 6px; }
-    .ci { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
-    .ci small { font-size: 12px; letter-spacing: .25em; color: #aaa; width: 62px; }
-    .ci b { font-size: 26px; font-weight: 700; letter-spacing: .06em; }
-    .ci.sm b { font-size: 22px; }
-    .hours { font-size: 12px; color: #ccc; margin-top: 4px; }
-    .qrs { display: flex; gap: 12px; }
-    .qr { text-align: center; font-size: 11px; letter-spacing: .15em; color: #ccc; }
-    .qr div { width: 25mm; height: 25mm; background: #fff; padding: 2mm; margin-bottom: 4px; }
+    .contact { background: #0c0c0c; color: #fff; padding: 9mm 14mm; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .rep { font-size: 14px; letter-spacing: .15em; color: #bbb; margin-bottom: 10px; }
+    .ci { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+    .ci small { font-size: 14px; letter-spacing: .25em; color: #aaa; width: 78px; }
+    .ci b { font-size: 36px; font-weight: 700; letter-spacing: .05em; }
+    .ci.sm b { font-size: 28px; }
+    .hours { font-size: 15px; color: #ddd; margin-top: 8px; line-height: 1.7; }
+    .qrs { display: flex; gap: 14px; }
+    .qr { text-align: center; font-size: 13px; letter-spacing: .15em; color: #ccc; }
+    .qr div { width: 30mm; height: 30mm; background: #fff; padding: 2mm; margin-bottom: 5px; }
     .qr img { width: 100%; height: 100%; display: block; }
+
+    /* ===== 2枚目 ===== */
+    .p2-head { background: #0c0c0c; color: #fff; padding: 7mm 14mm 5mm; }
+    .p2-head .en { text-align: left; }
+    .p2-title { font-size: 34px; font-weight: 900; letter-spacing: .08em; margin-top: 4px; }
+    .p2-lead { font-size: 15px; line-height: 1.7; color: #ddd; margin-top: 6px; }
+    .p2-lead b { color: #fff; border-bottom: 2px solid #fff; }
+
+    .p2-body { flex: 1; padding-top: 5mm; padding-bottom: 4mm; display: flex; flex-direction: column; gap: 4.5mm; }
+
+    .use-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+    .use { border: 1px solid #111; padding: 7px 11px; }
+    .use h4 { font-size: 17px; font-weight: 900; margin-bottom: 3px; }
+    .use p { font-size: 13.5px; line-height: 1.6; color: #333; }
+
+    .merit { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    .merit div { background: #f2f2f0; border-left: 5px solid #111; padding: 6px 12px; font-size: 14px; line-height: 1.5; color: #333; }
+    .merit strong { display: block; font-size: 18px; color: #111; margin-bottom: 2px; }
+    .caution { font-size: 13.5px; line-height: 1.6; border: 1px dashed #555; padding: 5px 12px; margin-top: 7px; }
+
+    .works { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 18px; font-size: 14px; line-height: 1.5; }
+    .works li { list-style: none; padding-left: 1em; text-indent: -1em; }
+    .works li::before { content: '■ '; font-size: 10px; vertical-align: 2px; }
+
+    .price { border: 2px solid #111; }
+    .price-row { display: flex; justify-content: space-between; font-size: 15px; padding: 3px 14px; border-bottom: 1px solid #ddd; font-weight: 500; }
+    .price-row span:last-child { font-weight: 900; font-size: 18px; }
+    .note { font-size: 12.5px; color: #444; padding: 3px 14px 5px; line-height: 1.6; }
+
+    .p2-foot { background: #0c0c0c; color: #fff; padding: 4mm 14mm; display: flex; justify-content: space-between; align-items: center; font-size: 15px; letter-spacing: .08em; }
+    .p2-foot b { font-size: 24px; letter-spacing: .05em; }
 
     @media print {
       @page { size: A4 portrait; margin: 0; }
-      body { background: #fff; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .flyer { width: 210mm; height: 297mm; }
+      body { background: #fff; padding: 0; gap: 0; display: block; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { page-break-after: always; break-after: page; }
+      .page:last-child { page-break-after: auto; break-after: auto; }
     }
   </style>
 </head>
 <body>
-<div class="flyer">
 
-  <div class="header">
+<!-- ======================= 1枚目 ======================= -->
+<div class="page">
+  <div class="hero">
     <div class="en">PC &amp; AI SUPPORT — NAGASAKI</div>
     <div class="brand">PC GOWw</div>
     <div class="catch">PCトラブル・AI活用・ネットワーク設定<br>なんでもお気軽にご相談ください</div>
     <div class="badge">現役のSEが対応します</div>
   </div>
 
-  <div class="body">
+  <div class="p1-body pad">
+    <div class="area">対応エリア：長崎市・時津町・長与町（その他はご相談ください）</div>
 
-    <div class="lead">
-      AIは「<b>何でも相談できる、文章が得意なアシスタント</b>」です。むずかしい操作は不要。話しかけるように文字を打つだけ。<br>
-      パソコンが苦手な方にも、画面を見ながら一緒に、ていねいにお教えします。
+    <div>
+      <div class="sec">SERVICE — サービス内容</div>
+      <div class="svc-grid">
+        <div class="svc dark"><h4>ChatGPT・Gemini・Claude</h4><p>AIの使い方を、画面を見ながら一緒にていねいに</p></div>
+        <div class="svc"><h4>パソコンの初期設定</h4><p>新しいパソコンの設定・データの引っ越し</p></div>
+        <div class="svc"><h4>ウイルス・安全対策</h4><p>怪しいソフトの除去・セキュリティ設定</p></div>
+        <div class="svc"><h4>Wi-Fi・ネット設定</h4><p>つながらない・遅いを解決、ルーター設定</p></div>
+        <div class="svc"><h4>Word・Excel・スライド</h4><p>操作のお手伝い・資料づくりの支援</p></div>
+        <div class="svc dark"><h4>業務アプリの開発</h4><p>手作業を減らす、職場専用のツールを作成</p></div>
+      </div>
     </div>
 
     <div>
+      <div class="sec">POINT — 選ばれる理由</div>
+      <div class="points">
+        <div><strong>現役SEが対応</strong>アプリ開発の経験多数。専門用語なしでご説明</div>
+        <div><strong>平日夜・土日祝</strong>お仕事帰りや休日もご相談OK</div>
+        <div><strong>出張・リモート</strong>ご自宅・職場へ伺います</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div>
+      <div class="rep">代表：栗原 剛</div>
+      <div class="ci"><small>TEL</small><b>080-5625-8817</b></div>
+      <div class="ci sm"><small>LINE ID</small><b>8726431</b></div>
+      <div class="hours">受付：平日夜間・土日祝<br>pcgoww8@gmail.com</div>
+    </div>
+    <div class="qrs">
+      <div class="qr"><div><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://kurigorira.github.io/third/" alt="サイトQR"></div>WEB SITE</div>
+      <div class="qr"><div><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://line.me/ti/p/~8726431" alt="LINE QR"></div>LINE</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= 2枚目 ======================= -->
+<div class="page">
+  <div class="p2-head">
+    <div class="en">AI FOR YOUR WORKPLACE</div>
+    <div class="p2-title">AIって、どんなもの？</div>
+    <div class="p2-lead">AIは<b>「何でも相談できる、文章が得意なアシスタント」</b>です。むずかしい操作は要りません。話しかけるように文字を打つだけで使えます。間違えても、何度でも言い直せます。</div>
+  </div>
+
+  <div class="p2-body pad">
+    <div>
       <div class="sec">AIで何ができる？ — 職場での例</div>
-      <div class="grid3">
-        <div class="card dark"><h4>文書づくり</h4><p>お知らせ・案内文・報告書の下書きを、すぐ作成</p></div>
-        <div class="card"><h4>言い換え・要約</h4><p>専門用語をやさしい言葉に。長い文章を3行に</p></div>
-        <div class="card"><h4>Excelのお助け</h4><p>勤務表・集計表の計算のやり方を教えてくれる</p></div>
+      <div class="use-grid">
+        <div class="use"><h4>文書づくり</h4><p>お知らせ・案内文・報告書の下書きをすぐ作成</p></div>
+        <div class="use"><h4>言い換え</h4><p>専門用語を、患者さん・ご家族に伝わる言葉へ</p></div>
+        <div class="use"><h4>要約</h4><p>長い通知やマニュアルを要点だけに</p></div>
+        <div class="use"><h4>Excelのお助け</h4><p>勤務表・集計表の計算方法を教えてくれる</p></div>
+        <div class="use"><h4>アイデア出し</h4><p>勉強会の企画・掲示物の文面づくり</p></div>
+        <div class="use"><h4>アプリ作り</h4><p>手作業を減らす専用ツールを開発</p></div>
       </div>
     </div>
 
     <div>
       <div class="sec">MERIT — 職場にとってのメリット</div>
       <div class="merit">
-        <div><strong>時間にゆとり</strong>事務作業が減り、人と向き合う時間に</div>
-        <div><strong>ミスが減る</strong>書き漏れ・計算間違いを防ぐ</div>
-        <div><strong>引き継ぎ安心</strong>「あの人しか分からない」を解消</div>
-        <div><strong>小さく安く</strong>無料〜月数千円から始められる</div>
+        <div><strong>① 時間にゆとりが生まれる</strong>事務作業が減り、人と向き合う時間に</div>
+        <div><strong>② ミスや書き漏れが減る</strong>見直し・計算を手伝い、品質がそろう</div>
+        <div><strong>③「あの人しか分からない」をなくす</strong>やり方を共有でき、引き継ぎも安心</div>
+        <div><strong>④ 小さく、安く始められる</strong>無料〜月数千円から。大きな設備は不要</div>
       </div>
+      <div class="caution">⚠️ 約束ごと：患者さん・お客様の<b>個人情報は入力しない</b>／AIの答えは<b>必ず人が確認する</b>。安全な使い方のルール作りもお手伝いします。</div>
     </div>
 
     <div>
-      <div class="sec">WORKS — 作ったアプリ・ツール</div>
-      <div class="card" style="font-size:12.5px;line-height:1.8;">
-        自動売買ツール／職員食の注文・集計アプリ／患者数・時間外勤務の集計アプリ／健診センター業務管理／予防接種の申込フォーム／空きベッド情報／作業の自動化（RPA）／家計管理アプリ／楽譜管理サイト／バス到着通知／家庭のセキュリティ対策 ほか<span style="color:#777">　詳しくはWebサイトへ</span>
-      </div>
-    </div>
-
-    <div>
-      <div class="sec">SERVICE — サービス内容</div>
-      <div class="grid3">
-        <div class="card"><h4>PCセットアップ</h4><p>初期設定・データ移行</p></div>
-        <div class="card"><h4>セキュリティ対策</h4><p>ウイルス除去・安全設定</p></div>
-        <div class="card"><h4>ネットワーク設定</h4><p>Wi-Fi・有線LAN・VPN</p></div>
-      </div>
+      <div class="sec">WORKS — これまでに作ったアプリ・ツール</div>
+      <ul class="works">
+        <li>自動売買ツール（検証中）</li>
+        <li>職員食の注文・集計アプリ</li>
+        <li>電子カルテのデータ集計システム</li>
+        <li>時間外勤務の集計アプリ</li>
+        <li>健診センター業務管理アプリ</li>
+        <li>予防接種の申込フォーム</li>
+        <li>空きベッド情報・統計の見える化</li>
+        <li>パソコン作業の自動化（RPA）</li>
+        <li>職員アンケートシステム</li>
+        <li>家計管理アプリ／楽譜管理サイト</li>
+        <li>バス到着通知／SNS投稿分析</li>
+        <li>家庭のネットワーク・端末の安全対策</li>
+      </ul>
     </div>
 
     <div>
       <div class="sec">PRICE — 価格について（税込）</div>
       <div class="price">
-        <div class="price-head">料金の目安</div>
         <div class="price-row"><span>出張費（長崎市・時津町・長与町）</span><span>3,500円〜</span></div>
         <div class="price-row"><span>出張費（その他エリア）</span><span>6,800円〜</span></div>
-        <div class="price-row"><span>PC初期設定・各種サポート</span><span>9,400円〜</span></div>
+        <div class="price-row"><span>パソコン初期設定・各種サポート</span><span>9,400円〜</span></div>
         <div class="price-row"><span>AI活用サポート（1時間）</span><span>16,000円</span></div>
         <div class="note">※リモートは出張費不要・10%OFF　※お支払いは現金のみ　※法人は小規模事業所が対象です</div>
       </div>
     </div>
-
   </div>
 
-  <div class="footer">
-    <div>
-      <div class="rep">代表：栗原 剛　／　長崎市・時津町・長与町　出張・リモート対応</div>
-      <div class="ci"><small>TEL</small><b>080-5625-8817</b></div>
-      <div class="ci sm"><small>LINE ID</small><b>8726431</b></div>
-      <div class="hours">受付：平日夜間・土日祝　／　pcgoww8@gmail.com</div>
-    </div>
-    <div class="qrs">
-      <div class="qr"><div><img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://kurigorira.github.io/third/" alt="サイトQR"></div>WEB SITE</div>
-      <div class="qr"><div><img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://line.me/ti/p/~8726431" alt="LINE QR"></div>LINE</div>
-    </div>
+  <div class="p2-foot">
+    <span>ご相談はお気軽に　TEL <b>080-5625-8817</b></span>
+    <span>LINE ID <b>8726431</b></span>
   </div>
-
 </div>
+
 </body>
 </html>
